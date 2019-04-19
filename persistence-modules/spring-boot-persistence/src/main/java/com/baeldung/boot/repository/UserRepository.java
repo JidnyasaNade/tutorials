@@ -40,7 +40,7 @@ public interface UserRepository extends JpaRepository<User, Integer> {
     User findUserByStatus(Integer status);
 
     @Query(value = "SELECT * FROM Users u WHERE u.status = ?1", nativeQuery = true)
-    User findUserByStatusNative(Integer status);
+    User findUserByStatusNative(Integer status);;
 
     @Query("SELECT u FROM User u WHERE u.status = ?1 and u.name = ?2")
     User findUserByStatusAndName(Integer status, String name);
